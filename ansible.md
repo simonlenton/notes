@@ -4,7 +4,7 @@
 
 #### Bootstrap an individual node, without an inventory file
 
-`$ ansible-playbook -K -k -u jay -i "phantom.local.lan," bootstrap_ubuntu.yml`
+`$ ansible-playbook -K -k -u simon -i "photon.lan," bootstrap.yml`
 
 ---
 
@@ -20,7 +20,7 @@
 
 #### Install a package on all hosts
 
-  `$ ansible all -s -m apt -a 'pkg=frozen-bubble state=installed update_cache=true'`
+  `$ ansible all -s -m apt -a 'pkg=<package name> state=installed update_cache=true'`
 
 ---
 
@@ -75,13 +75,15 @@ If the inventory file is marked as executable, ansible will execute it rather th
 
 #### Building ansible from source
 
-Install dependencies: `asciidoc cdbs devscripts`
+    # Install dependencies
+    asciidoc cdbs devscripts
 
-  `$ cd /usr/src`
-  `$ git clone --recursive https://github.com/ansible/ansible.git`
-  `$ git checkout tags/v2.1.1.0-1`
-  `$ git submodule update`
-  `$ make DEB_DIST=jessie deb`
+    # Clone and build ansible
+    cd /usr/src
+    git clone --recursive https://github.com/ansible/ansible.git
+    git checkout tags/v2.1.1.0-1
+    git submodule update
+    make DEB_DIST=jessie deb
 
 ---
 
