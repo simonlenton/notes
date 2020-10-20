@@ -1,0 +1,10 @@
+# Blacklist files/folders in same directory as the .gitignore file
+/*
+
+# Whitelist gitignore and .md files
+!.gitignore
+!*.md
+
+# Ignore all .DS_Store or .log files
+**/.DS_Store
+**.log
